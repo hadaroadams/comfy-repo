@@ -1,0 +1,176 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    height:150%;
+    margin-bottom:50px;
+        header{
+            display: flex;
+            width: 100%;
+            height:100px;
+            align-items: center;
+            justify-content:space-between; 
+            nav{
+                display: none;
+            }
+           img{
+            flex:0.1;
+           }
+            .menu{
+                margin-left: 20px;
+                font-size: 1.6em;
+                width: 70px;
+                height: 40px;
+                border-radius: 30px;
+                color: white;
+                background-color: rgb(206, 99, 6);
+                border: none;
+                transition:0.4s;
+
+                &:hover{
+                    background-color: rgb(125, 61, 6);
+                    cursor: pointer;
+                }
+            }
+            .cart{
+                margin-right: 20px;
+                border: none;
+                font-size: 1.7em;
+                color:rgb(61, 60, 60);
+                background-color: transparent;
+                cursor: pointer;
+                position: relative;
+                &::before{
+                    content:'1';
+                    background-color:rgb(206, 99, 6);
+                    font-size: 0.8em;
+                    font-weight: bold;
+                    border-radius: 45%;
+                    padding: 3px 9px;
+                    position: absolute;
+                    bottom: 20px;
+                    left: 10px;
+                    color: white;
+                }
+            }
+            
+        }
+       
+        .showUp{
+            background-color: rgb(242, 247, 249);
+            display: flex;
+            flex-direction: column;
+            position:fixed;
+            top: 20px;
+            width: 95%;
+            margin: 0 20px;
+            height: 95%;
+            z-index: 1;
+            visibility:visible;
+            border-radius: 10px;
+            animation: show forwards 0.6s;
+
+            @keyframes show {
+                from{
+                    opacity: 0;
+                }
+                to{
+                    opacity: 1;
+                }
+            }
+
+            button{
+                width: 20px;
+                align-self:flex-end;
+                margin:10px 20px;
+                border: none;
+                background-color: transparent;
+                font-size:2.3em;
+                color:rgb(74, 74, 75);
+            }
+            ul{
+                list-style: none;
+                margin-top: 10px;
+                padding-left: 40px;
+                
+                li{
+                    margin: 20px;
+                    font-size: 1.5em;
+                    a{
+                        color: rgb(104, 105, 105);
+                        i{
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .clear{
+            display: none;
+        }
+
+        section{
+            background-color: aliceblue;
+            padding: 40px;
+            h2{
+                color: rgb(105, 119, 132);
+            }
+        }
+        main{
+            margin: 50px 30px;
+            h1{
+                text-align: center;
+                margin: 20px;
+                letter-spacing: 2px;
+                font-size: 2.4em;
+                color: rgb(57, 58, 58);
+                &::before{
+                    content: '/';
+                    color: rgb(206, 99, 6);
+                    margin-right: 5px;
+                }
+            }
+            p{
+                letter-spacing: 2px;
+                line-height: 2;
+                color: rgb(102, 117, 137);
+                width:100%;
+            }
+        }
+
+    @media (min-width:800px) {
+            .navBar{
+                display: block;
+                ul{
+                    display: flex;
+                    list-style: none;
+                    li{
+                        margin: 20px;
+                        font-size: 1.5em;
+
+                        a{
+                            color:black;
+                        }
+                    }                   
+                }
+            }
+            .menu{
+                display: none;
+            }
+            .showUp{
+                visibility: hidden;
+            }
+        main{
+            p{
+                margin: 0 auto;
+                width: 700px;
+            }
+        }
+    }
+}
