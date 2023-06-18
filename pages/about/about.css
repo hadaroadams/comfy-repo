@@ -9,7 +9,7 @@ a {
 }
 
 body {
-  height: 150%;
+  height: 120vh;
   margin-bottom: 50px;
 }
 body header {
@@ -61,18 +61,13 @@ body header .cart::before {
   left: 10px;
   color: white;
 }
-body .showUp {
-  background-color: rgb(242, 247, 249);
-  display: flex;
-  flex-direction: column;
+body .navBackground {
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
-  top: 20px;
-  width: 95%;
-  margin: 0 20px;
-  height: 95%;
+  top: 0;
+  width: 100%;
+  height: 100vh;
   z-index: 1;
-  visibility: visible;
-  border-radius: 10px;
   animation: show forwards 0.6s;
 }
 @keyframes show {
@@ -83,7 +78,16 @@ body .showUp {
     opacity: 1;
   }
 }
-body .showUp button {
+body .navBackground .showUp {
+  background-color: rgb(249, 250, 250);
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  visibility: visible;
+  border-radius: 10px;
+  height: 90vh;
+}
+body .navBackground .showUp button {
   width: 20px;
   align-self: flex-end;
   margin: 10px 20px;
@@ -92,19 +96,19 @@ body .showUp button {
   font-size: 2.3em;
   color: rgb(74, 74, 75);
 }
-body .showUp ul {
+body .navBackground .showUp ul {
   list-style: none;
   margin-top: 10px;
   padding-left: 40px;
 }
-body .showUp ul li {
+body .navBackground .showUp ul li {
   margin: 20px;
   font-size: 1.5em;
 }
-body .showUp ul li a {
+body .navBackground .showUp ul li a {
   color: rgb(104, 105, 105);
 }
-body .showUp ul li a i {
+body .navBackground .showUp ul li a i {
   margin-right: 20px;
 }
 body .clear {
@@ -156,11 +160,11 @@ body main p {
   body .menu {
     display: none;
   }
-  body .showUp {
+  body .navBackground {
     visibility: hidden;
   }
   body main p {
-    margin: 0 auto;
+    margin: 20px auto;
     width: 700px;
   }
 }/*# sourceMappingURL=about.css.map */

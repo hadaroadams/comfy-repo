@@ -3,7 +3,7 @@ import { getElement } from "./elements.js"
 
 export function buttons(){
     let btn = document.querySelectorAll('button')
-    let menu =getElement('.showUp')
+    let menu = getElement('.navBackground')
     btn.forEach(item=>{
         item.onclick=()=>{
             switch(item.id){
