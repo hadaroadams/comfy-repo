@@ -8,9 +8,154 @@ a {
   text-decoration: none;
 }
 
-body {
-  height: 120vh;
-  margin-bottom: 50px;
+body .cartSliderIn, body .cartSliderOut {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: end;
+  animation: show forwards 0.6s;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .cartSliderIn aside, body .cartSliderOut aside {
+  background-color: rgb(238, 244, 248);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: scroll;
+  animation: slide 1s forwards;
+}
+@keyframes slide {
+  from {
+    width: 0px;
+    opacity: 0;
+  }
+  to {
+    width: 400px;
+    opacity: 1;
+  }
+}
+body .cartSliderIn aside > button, body .cartSliderOut aside > button {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2.3em;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+body .cartSliderIn aside h2, body .cartSliderOut aside h2 {
+  text-align: center;
+  font-family: cursive;
+}
+body .cartSliderIn aside .itemContainer, body .cartSliderOut aside .itemContainer {
+  height: 100vh;
+}
+body .cartSliderIn aside .itemContainer article, body .cartSliderOut aside .itemContainer article {
+  margin-top: 20px;
+  display: flex;
+}
+body .cartSliderIn aside .itemContainer article img, body .cartSliderOut aside .itemContainer article img {
+  width: 30%;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+body .cartSliderIn aside .itemContainer article .productDetails, body .cartSliderOut aside .itemContainer article .productDetails {
+  flex: 1;
+  margin-right: 20px;
+}
+body .cartSliderIn aside .itemContainer article .productDetails h5, body .cartSliderOut aside .itemContainer article .productDetails h5 {
+  font-size: 1.1em;
+}
+body .cartSliderIn aside .itemContainer article .productDetails p, body .cartSliderOut aside .itemContainer article .productDetails p {
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+body .cartSliderIn aside .itemContainer article .productDetails button, body .cartSliderOut aside .itemContainer article .productDetails button {
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+  margin-top: 10px;
+  cursor: pointer;
+}
+body .cartSliderIn aside .itemContainer article .productBtns h5, body .cartSliderOut aside .itemContainer article .productBtns h5 {
+  text-align: center;
+  margin: 10px 0px;
+}
+body .cartSliderIn aside .itemContainer article .productBtns button, body .cartSliderOut aside .itemContainer article .productBtns button {
+  color: rgb(206, 99, 6);
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body .cartSliderIn aside .itemContainer article .productBtns button:hover, body .cartSliderOut aside .itemContainer article .productBtns button:hover {
+  color: rgb(125, 61, 6);
+}
+body .cartSliderIn aside .total, body .cartSliderOut aside .total {
+  margin: 0 auto;
+}
+body .cartSliderIn aside .total p, body .cartSliderOut aside .total p {
+  font-family: cursive;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+body .cartSliderIn aside .total button, body .cartSliderOut aside .total button {
+  width: 230px;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  background-color: rgb(206, 99, 6);
+  border: none;
+  padding: 5px 0px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  transition: 0.5s;
+}
+body .cartSliderIn aside .total button:hover, body .cartSliderOut aside .total button:hover {
+  background-color: rgb(125, 61, 6);
+}
+body .cartSliderOut {
+  animation: show1 forwards 0.6s;
+}
+@keyframes show1 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+body .cartSliderOut aside {
+  animation: slide1 1s forwards;
+}
+@keyframes slide1 {
+  from {
+    width: 400px;
+    opacity: 1;
+  }
+  to {
+    width: 0px;
+    opacity: 0;
+  }
+}
+body .clear {
+  display: none;
 }
 body header {
   display: flex;
@@ -114,11 +259,11 @@ body .navBackground .showUp ul li a i {
 body .clear {
   display: none;
 }
-body section {
+body .display, body .title {
   background-color: aliceblue;
   padding: 40px;
 }
-body section h2 {
+body .display h2, body .title h2 {
   color: rgb(105, 119, 132);
 }
 body main {

@@ -8,34 +8,221 @@
     <title>Product</title>
 </head>
 <body>
-     <header>
-            <button class="menu" id='menu'>
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <nav class="navBar">
-                <ul>
-                    <li><a href="./../../index.html">Home</a></li>
-                    <li><a href="./../products/products.html">Product</a></li>
-                    <li><a href="./../about/about.html">About</a></li>
-                </ul>
-            </nav>
-            <div>
-                <img src="./assert/logo-white.svg" alt="">
+    <section class="clear cartSliderIn" id="cartSlider" >
+        <aside>
+            <button id="closeCart"><i class="fa-solid fa-xmark"></i></button>
+            <h2>Your Bag</h2>
+            <div class="itemContainer">
+                <article>
+                    <img src="./assert/product-1.jpeg" alt="">
+                    <div class="productDetails">
+                        <h5>cofinChair</h5>
+                        <p>$99.09</p>
+                        <button>remove</button>
+                    </div>
+                    <div class="productBtns">
+                        <button><i class="fa-solid fa-angle-up"></i></button>
+                        <h5>1</h5>
+                        <button><i class="fa-solid fa-angle-down"></i></button>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assert/product-1.jpeg" alt="">
+                    <div class="productDetails">
+                        <h5>cofinChair</h5>
+                        <p>$99.09</p>
+                        <button>remove</button>
+                    </div>
+                    <div class="productBtns">
+                        <button><i class="fa-solid fa-angle-up"></i></button>
+                        <h5>1</h5>
+                        <button><i class="fa-solid fa-angle-down"></i></button>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assert/product-1.jpeg" alt="">
+                    <div class="productDetails">
+                        <h5>cofinChair</h5>
+                        <p>$99.09</p>
+                        <button>remove</button>
+                    </div>
+                    <div class="productBtns">
+                        <button><i class="fa-solid fa-angle-up"></i></button>
+                        <h5>1</h5>
+                        <button><i class="fa-solid fa-angle-down"></i></button>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assert/product-1.jpeg" alt="">
+                    <div class="productDetails">
+                        <h5>cofinChair</h5>
+                        <p>$99.09</p>
+                        <button>remove</button>
+                    </div>
+                    <div class="productBtns">
+                        <button><i class="fa-solid fa-angle-up"></i></button>
+                        <h5>1</h5>
+                        <button><i class="fa-solid fa-angle-down"></i></button>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assert/product-1.jpeg" alt="">
+                    <div class="productDetails">
+                        <h5>cofinChair</h5>
+                        <p>$99.09</p>
+                        <button>remove</button>
+                    </div>
+                    <div class="productBtns">
+                        <button><i class="fa-solid fa-angle-up"></i></button>
+                        <h5>1</h5>
+                        <button><i class="fa-solid fa-angle-down"></i></button>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assert/product-1.jpeg" alt="">
+                    <div class="productDetails">
+                        <h5>cofinChair</h5>
+                        <p>$99.09</p>
+                        <button>remove</button>
+                    </div>
+                    <div class="productBtns">
+                        <button><i class="fa-solid fa-angle-up"></i></button>
+                        <h5>1</h5>
+                        <button><i class="fa-solid fa-angle-down"></i></button>
+                    </div>
+                </article>
+                
+
             </div>
-            <button class="cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </button>
-        </header>
-        <nav class="showUp clear">
+            <div class="total">
+                <p>Total:<span>$0.00</span></p>
+                <button>CHECKOUT</button>
+            </div>
+        </aside>
+    </section>
+    <header>
+        <button class="menu" id='menu'>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="navBar">
+            <ul>
+                <li><a href="./../../index.html">Home</a></li>
+                <li><a href="./../products/products.html">Product</a></li>
+                <li><a href="./../about/about.html">About</a></li>
+            </ul>
+        </nav>
+        <div>
+            <img src="../../assert/logo-black.svg" alt="">
+        </div>
+        <button class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+    </header>
+    <div class="navBackground clear">
+        <nav class="showUp ">
             <button id="close"><i class="fa-solid fa-xmark"></i></button>
             <ul>
-                <li><a href="../../index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
+                <li><a href="./../../index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
                 <li><a href="./../products/products.html"><i class="fa-solid fa-couch"></i>Product</a></li>
                 <li><a href="./../about/about.html"><i class="fa-solid fa-book"></i>About</a></li>
             </ul>
-        </nav>
+        </nav>  
+    </div>
+    <section class="title">
+        <h2>Home / Products</h2>
+    </section>
 
-
+    <section class="display">
+        <div class="inputs">
+            <form action="">
+                <input type="text" placeholder="Search...">
+                <div class="list">
+                    <h4>Company</h4>
+                    <ul>
+                        <li>All</li>
+                        <li>Ikea</li>
+                        <li>Marcos</li>
+                        <li>Caressa</li>
+                        <li>Liddy</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Price</h4>
+                    <input type="range">
+                    <p>Value:$<span class="price">80</span></p>
+                </div>
+            </form>
+        </div>
+        <div class="products">
+            <article>
+                <div class="productImg">
+                    <img src="../../assert/product-1.jpeg" alt="">
+                    <div class="productButtons">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+                <p>High-black Bench</p>
+                <h3>$9,99</h3>
+            </article>
+            <article>
+                <div class="productImg">
+                    <img src="../../assert/product-1.jpeg" alt="">
+                    <div class="productButtons">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+                <p>High-black Bench</p>
+                <h3>$9,99</h3>
+            </article>
+            <article>
+                <div class="productImg">
+                    <img src="../../assert/product-1.jpeg" alt="">
+                    <div class="productButtons">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+                <p>High-black Bench</p>
+                <h3>$9,99</h3>
+            </article>
+            <article>
+                <div class="productImg">
+                    <img src="../../assert/product-1.jpeg" alt="">
+                    <div class="productButtons">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+                <p>High-black Bench</p>
+                <h3>$9,99</h3>
+            </article><article>
+                <div class="productImg">
+                    <img src="../../assert/product-1.jpeg" alt="">
+                    <div class="productButtons">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+                <p>High-black Bench</p>
+                <h3>$9,99</h3>
+            </article>
+            <article>
+                <div class="productImg">
+                    <img src="../../assert/product-1.jpeg" alt="">
+                    <div class="productButtons">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+                <p>High-black Bench</p>
+                <h3>$9,99</h3>
+            </article>
+        </div>
+    </section>
+    
+    <script src="https://kit.fontawesome.com/91c2d2ff16.js" crossorigin="anonymous"></script>
     <script src="./products.js" type="module"></script>
 </body>
 </html>

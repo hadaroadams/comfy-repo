@@ -8,8 +8,165 @@ a{
 }
 
 body{
-    height:120vh;
-    margin-bottom:50px;
+    .cartSliderIn , .cartSliderOut{
+    position:fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: end;
+    animation: show forwards 0.6s;
+    @keyframes show {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+    
+    aside{
+        background-color: rgb(238, 244, 248);
+        display: flex;
+        flex-direction: column;
+        padding: 20px; 
+        overflow: scroll;
+        animation: slide 1s forwards;
+
+        @keyframes slide {
+            from{
+                width: 0px;
+                opacity: 0;
+            }
+            to{
+                width: 400px;
+                opacity: 1;
+            }
+        }
+
+        & > button{
+            height: fit-content;
+            width: fit-content;
+            font-size: 2.3em;
+            background-color:transparent;
+            border:none;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        h2{
+            text-align: center;
+            font-family:cursive;
+        }
+        .itemContainer{
+            height:100vh;
+            article{
+                margin-top: 20px;
+                display: flex;
+                    img{
+                        width: 30%; 
+                        border-radius: 5px;
+                        margin-right: 20px;
+                    }
+                .productDetails{
+                    flex:1;
+                    margin-right: 20px;
+
+                    h5{
+                        font-size: 1.1em;
+                    }
+                    p{
+                        margin-top: 5px;
+                        font-size: 0.9em;
+                    }
+                    button{
+                        border: none;
+                        background-color: transparent;
+                        font-size: 1em;
+                        margin-top: 10px;
+                        cursor: pointer;
+                    }
+                }
+                .productBtns{
+                    h5{
+                        text-align: center;
+                        margin: 10px 0px;
+                    }
+                    button{
+                        color:rgb(206, 99, 6);
+                        background-color:transparent;
+                        border: none;
+                        font-size: 1em;
+                        cursor: pointer;
+                        transition: 0.5s;
+
+                        &:hover{
+                            color:rgb(125, 61, 6);
+                            
+                        }
+                    }
+                }
+            }
+        }
+        .total{
+            margin: 0 auto;
+            p{
+                font-family: cursive;
+                font-size: 1.6em;
+                margin-bottom: 10px;
+                text-align: center;
+                margin-top: 20px;
+            }
+            button{
+                width:230px;
+                font-size: 1.2em;
+                letter-spacing: 2px;
+                background-color:rgb(206, 99, 6);
+                border: none;
+                padding:5px 0px;
+                cursor: pointer;
+                border-radius: 5px;
+                color: white;
+                transition: 0.5s;
+
+                &:hover{
+                    background-color:rgb(125, 61, 6);
+                    
+                }
+
+            }
+        }
+    }
+}
+    .cartSliderOut{
+        animation: show1 forwards 0.6s;
+
+        @keyframes show1 {
+                from{
+                    opacity: 1;
+                }
+                to{
+                    opacity: 0;
+                    display: none;
+                }
+            }
+        aside{
+            animation: slide1 1s forwards;
+            @keyframes slide1 {
+                from{
+                    width: 400px;
+                    opacity: 1;
+                }
+                to{
+                    width: 0px;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    .clear{
+        display: none;
+    }
         header{
             display: flex;
             width: 100%;
@@ -118,7 +275,7 @@ body{
             display: none;
         }
 
-        section{
+        .display , .title{
             background-color: aliceblue;
             padding: 40px;
             h2{
