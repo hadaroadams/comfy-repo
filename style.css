@@ -312,6 +312,11 @@ body .feature h1::before {
   margin-right: 20px;
   color: rgb(206, 99, 6);
 }
+body .feature h2 {
+  text-align: center;
+  font-size: 2em;
+  color: rgb(206, 99, 6);
+}
 body .feature div {
   display: grid;
 }

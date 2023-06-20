@@ -1,13 +1,11 @@
 import { getElement } from "./elements.js";
-import { fetctApi } from "./fetchAPI.js";
 import { filterAPi } from "./filter.js";
 
-let productArea = getElement('.productContainer')
+let product = getElement(".products")
 
-export async function homeDisplay(){
-        let data = await filterAPi()
+export async function productDisplay(){
+    let data = await filterAPi()
         data.map((item , num)=>{
-            if(num<=2){
                 console.log(num)
                 let article = document.createElement('article')
                 let content = `
@@ -22,8 +20,7 @@ export async function homeDisplay(){
                         <h3>${item.price}</h3>
                 `
                 article.innerHTML=content
-                productArea.appendChild(article)
-            }
+                product.appendChild(article)
         })
     
 }
