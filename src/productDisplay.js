@@ -6,10 +6,13 @@ let product = getElement(".products")
 
 export async function productDisplay(selections){
     //let data = await filterAPi()
-    product.innerHTML=""
+    product.innerHTML=`<div class="loader">
+                        <img src="../../assert/Loading_icon.gif" alt="">
+                        </div>`
     if(selections){
         console.log(selections)
         let data = selections
+        product.innerHTML=''
             data.map((item , num)=>{
                     let article = document.createElement('article')
                     let content = `
@@ -28,6 +31,7 @@ export async function productDisplay(selections){
             })
     }else{
         let data = await filterAPi()
+        product.innerHTML=""
             data.map((item , num)=>{
                     let article = document.createElement('article')
                     let content = `

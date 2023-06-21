@@ -333,6 +333,14 @@ body{
             }
             .products{
                 display: grid;
+                .loader{
+                    position: absolute;
+                    z-index: 1;
+                    top:50%;
+                    left:50%;
+                    transform: translate(-50%,-50%);
+                }
+
                 article{
                     display: flex;
                     flex-direction: column;
@@ -419,6 +427,8 @@ body{
             
             .products{
                 grid-template-columns: 1fr 1fr;
+                width: fit-content;
+                height: fit-content;
             }
         }
     }
@@ -426,6 +436,8 @@ body{
         .display{
             .products{
                 grid-template-columns: 1fr 1fr 1fr;
+                width: fit-content;
+                height: fit-content;
             }
         }
     }

@@ -314,6 +314,13 @@ body .display .inputs form .price input {
 body .display .products {
   display: grid;
 }
+body .display .products .loader {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 body .display .products article {
   display: flex;
   flex-direction: column;
@@ -392,10 +399,18 @@ body .display .products article h3 {
   }
   body .display .products {
     grid-template-columns: 1fr 1fr;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }
 @media (min-width: 1000px) {
   body .display .products {
     grid-template-columns: 1fr 1fr 1fr;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }/*# sourceMappingURL=products.css.map */

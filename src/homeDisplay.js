@@ -5,7 +5,11 @@ import { filterAPi } from "./filter.js";
 let productArea = getElement('.productContainer')
 
 export async function homeDisplay(){
+        productArea.innerHTML=`<div class="loader">
+                <img src="./assert/Loading_icon.gif" alt="">
+            </div>`
         let data = await filterAPi()
+        productArea.innerHTML=""
         data.map((item , num)=>{
             if(num<=2){
                 console.log(num)

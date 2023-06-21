@@ -317,36 +317,45 @@ body .feature h2 {
   font-size: 2em;
   color: rgb(206, 99, 6);
 }
-body .feature div {
+body .feature .productContainer {
   display: grid;
+  position: relative;
 }
-body .feature div article {
+body .feature .productContainer .loader {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .feature .productContainer article {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   margin: 20px;
 }
-body .feature div article .productImg {
+body .feature .productContainer article .productImg {
   width: 100%;
   transition: 0.5s;
   position: relative;
 }
-body .feature div article .productImg img {
+body .feature .productContainer article .productImg img {
   border-radius: 10px;
   width: 100%;
   height: 300px;
 }
-body .feature div article .productImg div {
+body .feature .productContainer article .productImg div {
   position: absolute;
   display: flex;
   top: 50%;
-  width: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   justify-content: center;
   visibility: visible;
   transition: 0.3s;
 }
-body .feature div article .productImg div button {
+body .feature .productContainer article .productImg div button {
   font-size: 1.4em;
   width: 50px;
   border: none;
@@ -358,18 +367,18 @@ body .feature div article .productImg div button {
   margin: 10px;
   transition: 0.4s;
 }
-body .feature div article .productImg:hover div {
+body .feature .productContainer article .productImg:hover div {
   visibility: visible;
 }
-body .feature div article .productImg:hover div button {
+body .feature .productContainer article .productImg:hover div button {
   background-color: rgb(206, 99, 6);
   color: white;
 }
-body .feature div article p {
+body .feature .productContainer article p {
   margin: 15px;
   letter-spacing: 2px;
 }
-body .feature div article h3 {
+body .feature .productContainer article h3 {
   letter-spacing: 2px;
 }
 body .feature .allProduct {
@@ -377,7 +386,7 @@ body .feature .allProduct {
   justify-content: center;
   margin: 40px;
 }
-body .feature .allProduct button {
+body .feature .allProduct .btn {
   font-size: 1.1em;
   letter-spacing: 4px;
   border-radius: 10px;
@@ -387,7 +396,7 @@ body .feature .allProduct button {
   color: white;
   transition: 0.4s;
 }
-body .feature .allProduct button:hover {
+body .feature .allProduct .btn:hover {
   background-color: rgb(132, 63, 3);
   cursor: pointer;
 }

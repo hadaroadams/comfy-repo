@@ -19,7 +19,7 @@ priceRange.addEventListener("input",(e)=>{
     
 })
 textArea.addEventListener('input',(e)=>{
-    let text = e.target.value
+    let text = e.target.value.toLowerCase()
     btnPressed(null,null,text)
 })
 
