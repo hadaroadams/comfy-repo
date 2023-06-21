@@ -292,9 +292,24 @@ body .display .inputs form .list h4 {
   font-size: 1.3em;
   margin-bottom: 7px;
 }
-body .display .inputs form .list ul li {
+body .display .inputs form .list article {
+  display: flex;
+  flex-direction: column;
+}
+body .display .inputs form .list article button {
   padding: 5px;
   color: rgb(79, 80, 81);
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.2em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+body .display .inputs form .price input {
+  padding: 0px;
+  margin: 10px 3px;
 }
 body .display .products {
   display: grid;

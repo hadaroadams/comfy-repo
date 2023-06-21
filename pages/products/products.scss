@@ -307,11 +307,25 @@ body{
                             font-size: 1.3em;
                             margin-bottom: 7px;
                         }
-                        ul{
-                            li{
+                        article{
+                            display: flex;
+                            flex-direction: column;
+                            button{
                                 padding: 5px;
                                 color: rgb(79, 80, 81);
+                                width: fit-content;
+                                font-size: 1.2em;
+                                background-color: transparent;
+                                border: none;
+                                cursor: pointer;
+                                margin: 5px;
                             }
+                        }
+                    }
+                    .price{
+                        input{
+                            padding: 0px;
+                            margin: 10px 3px;
                         }
                     }
                 }

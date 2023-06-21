@@ -135,21 +135,21 @@
     <section class="display">
         <div class="inputs">
             <form action="">
-                <input type="text" placeholder="Search...">
+                <input type="text" placeholder="Search..." id="text">
                 <div class="list">
                     <h4>Company</h4>
-                    <ul>
-                        <li>All</li>
-                        <li>Ikea</li>
-                        <li>Marcos</li>
-                        <li>Caressa</li>
-                        <li>Liddy</li>
-                    </ul>
+                    <article>
+                        <button id="all">All</button>
+                        <button id="ikea">Ikea</button>
+                        <button id="marcos">Marcos</button>
+                        <button id="caressa">Caressa</button>
+                        <button id="liddy">Liddy</button>
+                    </article>
                 </div>
-                <div>
+                <div class="price">
                     <h4>Price</h4>
-                    <input type="range">
-                    <p>Value:$<span class="price">80</span></p>
+                    <input type="range" id="range" min="0" max="80" value="80">
+                    <p>Value:$<span class="priceNum">80</span></p>
                 </div>
             </form>
         </div>

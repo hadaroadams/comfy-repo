@@ -1,4 +1,6 @@
 import { getElement } from "./elements.js"
+import { productDisplay } from "./productDisplay.js"
+import { btnPressed } from "./productsInputs.js"
 
 
 export function buttons(){
@@ -6,8 +8,9 @@ export function buttons(){
     let menu = getElement('.navBackground')
     let slider = getElement('#cartSlider')
     console.log(slider)
-    btn.forEach(item=>{
-        item.onclick=()=>{
+    btn.forEach(async(item)=>{
+        item.onclick=(e)=>{
+            e.preventDefault()
             switch(item.id || item.className){
                 case 'menu':
                     menu.classList.remove('clear');
@@ -28,6 +31,24 @@ export function buttons(){
                     slider.classList.add('cartSliderIn');
                     slider.classList.remove('clear');
                     console.log(slider)
+                break;
+                case 'all':
+                    console.log('all');
+                    productDisplay()
+                break;
+                case 'ikea':
+                    
+                    btnPressed("ikea")
+                break;
+                case 'marcos':
+                    
+                    btnPressed("marcos")
+                break;
+                case 'caressa':
+                    btnPressed("caressa")
+                break;
+                case 'liddy':
+                    btnPressed("liddy")
                 break;
             }
         }
