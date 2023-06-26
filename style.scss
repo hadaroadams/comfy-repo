@@ -169,7 +169,7 @@ body{
     }
     .homeSection{
         width: 100%;
-        height:130vh;
+        height:100vh;
         background-image: url('./assert/main-bcg.jpeg') ;
         background-size: cover;
         background-position: center;
@@ -185,7 +185,7 @@ body{
                 display: none;
             }
            img{
-            flex:1;
+            flex:0.4;
            }
             .menu{
                 margin-left: 20px;
@@ -204,7 +204,7 @@ body{
                 }
             }
             .cart{
-                margin-right: 20px;
+                margin-right: 40px;
                 border: none;
                 font-size: 1.7em;
                 color: white;
@@ -430,6 +430,7 @@ body{
         .homeSection{
             .navBar{
                 display: block;
+                margin-left: 50px;
                 ul{
                     display: flex;
                     list-style: none;
@@ -449,6 +450,15 @@ body{
             .navBackground{
                 visibility: hidden;
             }
+            .homeInfo{
+                margin-left: 50px;
+                h1{
+                    font-size: 4rem;
+                }
+                p{
+                  font-size: 2rem;  
+                }
+            }
         }
         .feature{
             .productContainer{
@@ -466,6 +476,16 @@ body{
 
     }
     @media (min-width:1000px) {
+        .homeSection{
+         .homeInfo{
+                h1{
+                    font-size: 5em;
+                }
+                p{
+                  font-size: 3rem;  
+                }
+            }
+        }
        .feature{
             .productContainer{
                 grid-template-columns:1fr 1fr 1fr;

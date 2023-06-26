@@ -1,0 +1,1 @@
+let singlProduct='https://course-api.com/javascript-store-single-product?id=rec43w3ipXvP28vog'

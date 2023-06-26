@@ -342,6 +342,8 @@ body .display .products article .productImg div {
   position: absolute;
   display: flex;
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   justify-content: center;
   visibility: visible;

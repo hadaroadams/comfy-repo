@@ -1,8 +1,11 @@
-import { fetctApi } from "./fetchAPI.js";
+//import { buttons } from "./buttons.js";
+import { fetctApi, productArray } from "./fetchAPI.js";
 
-export async function filterAPi(){
-    let respons = await fetctApi()
-    console.log(respons)
+await fetctApi()
+
+export function filterAPi(){
+    let respons = productArray
+    console.log(productArray)
     let list = []
     respons.map((item)=>{
         const {id, fields } = item
@@ -11,11 +14,12 @@ export async function filterAPi(){
             id:id,
             image:image[0].url,
             title:name,
-            price:price,
-            company:company
+            price:price/100,
+            company:company,
         }
         list.push(productItme)
 
      })
+     
     return list
 }

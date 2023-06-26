@@ -18,8 +18,8 @@ export async function homeDisplay(){
                         <div class="productImg">
                             <img src=${item.image} alt="">
                             <div class="productButtons">
-                                <a href=""><button><i class="fa-solid fa-magnifying-glass"></i></button></a>
-                                <button><i class="fa-solid fa-cart-shopping"></i></button>
+                                <a href=""><button id='search'><i class="fa-solid fa-magnifying-glass"></i></button></a>
+                                <button id ='cartItem'><i class="fa-solid fa-cart-shopping"></i></button>
                             </div>
                         </div>
                         <p>${item.title}</p>

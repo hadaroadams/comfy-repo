@@ -1,8 +1,8 @@
+import { buttons } from "./buttons.js";
 import { getElement } from "./elements.js";
 import { productArray } from "./fetchAPI.js";
 import { filterAPi } from "./filter.js";
 import { productDisplay } from "./productDisplay.js";
-
 
 export  function all(){
     productDisplay()
@@ -13,7 +13,7 @@ export  function btnPressed(company, num,title){
     let list=[]
     data.filter((item)=>{
         console.log(item)
-        if(item.fields.company===company||item.fields.price<=num*100||item.fields.name.includes(title)) {
+        if(item.fields.company===company||item.fields.price<=num*1000 ||item.fields.name.includes(title)) {
             console.log(1)
             const {id, fields } = item
             const {image,name,price,company } = fields
@@ -21,7 +21,7 @@ export  function btnPressed(company, num,title){
                 id:id,
                 image:image[0].url,
                 title:name,
-                price:price,
+                price:price/100,
                 company:company
             }
         list.push(productItem)
