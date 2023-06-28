@@ -202,8 +202,7 @@ body .homeSection header .cart {
   cursor: pointer;
   position: relative;
 }
-body .homeSection header .cart::before {
-  content: "1";
+body .homeSection header .cart .cartNum {
   background-color: rgb(206, 99, 6);
   font-size: 0.8em;
   font-weight: bold;

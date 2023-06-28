@@ -1,11 +1,14 @@
-//import { buttons } from "./buttons.js";
 import { fetctApi, productArray } from "./fetchAPI.js";
+import { homeDisplay } from "./homeDisplay.js";
+console.log("1")
 
 await fetctApi()
+// window.addEventListener('load',async()=>{
+// })
 
 export function filterAPi(){
     let respons = productArray
-    console.log(productArray)
+    //console.log(productArray)
     let list = []
     respons.map((item)=>{
         const {id, fields } = item

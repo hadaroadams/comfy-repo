@@ -205,7 +205,7 @@ body{
                 background-color: transparent;
                 cursor: pointer;
                 position: relative;
-                &::before{
+                & .cartNum{
                     content:'1';
                     background-color:rgb(206, 99, 6);
                     font-size: 0.8em;

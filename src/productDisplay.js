@@ -2,9 +2,9 @@ import { buttons } from "./buttons.js";
 import { getElement } from "./elements.js";
 import { productArray } from "./fetchAPI.js";
 import { filterAPi } from "./filter.js";
-
+ console.log('2')
 let product = getElement(".products")
-let items =await filterAPi()
+let items = await filterAPi()
 export async function productDisplay(selections){
     //let data = await filterAPi()
     product.innerHTML=`<div class="loader">
@@ -17,8 +17,9 @@ export async function productDisplay(selections){
         product.innerHTML=''
             data.map((item)=>{
                     let article = document.createElement('article')
+                    article.setAttribute('id',`${item.id}`)
                     let content = `
-                            <div class="productImg">
+                            <div class="productImg" id ="${item.id}">
                                 <img src=${item.image} alt="">
                                 <div class="productButtons">
                                     <a href=""><button class="search"><i class="fa-solid fa-magnifying-glass"></i></button></a>
@@ -26,7 +27,7 @@ export async function productDisplay(selections){
                                 </div>
                             </div>
                             <p>${item.title}</p>
-                            <h3>${item.price}</h3>
+                            <h3>$${item.price}</h3>
                     `
                     article.innerHTML = content
                     product.appendChild(article)
@@ -35,8 +36,9 @@ export async function productDisplay(selections){
         product.innerHTML=""
             items.map((item)=>{
                     let article = document.createElement('article')
+                    article.setAttribute('id',`${item.id}`)
                     let content = `
-                            <div class="productImg">
+                            <div class="productImg" id ="${item.id}">
                                 <img src=${item.image} alt="">
                                 <div class="productButtons">
                                     <a href=""><button class="search"><i class="fa-solid fa-magnifying-glass"></i></button></a>

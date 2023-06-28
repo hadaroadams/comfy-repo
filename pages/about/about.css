@@ -194,7 +194,7 @@ body header .cart {
   cursor: pointer;
   position: relative;
 }
-body header .cart::before {
+body header .cart .cartNum {
   content: "1";
   background-color: rgb(206, 99, 6);
   font-size: 0.8em;

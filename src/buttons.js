@@ -1,14 +1,14 @@
+import { addToCart } from "./carts.js"
 import { getElement } from "./elements.js"
 import { productDisplay } from "./productDisplay.js"
 import { btnPressed } from "./productsInputs.js"
 
-
+console.log("heloo")
 
 export function buttons(){
     let btn = document.querySelectorAll('button')
     let menu = getElement('.navBackground')
 
-    console.log(slider)
     btn.forEach(async(item)=>{
         console.log(item.id)
         item.onclick=(e)=>{
@@ -43,6 +43,7 @@ export function buttons(){
                     btnPressed("liddy")
                 break;
                 case 'cartItem':
+                    addToCart(e)
                     showCart()
                 break;
             }
