@@ -1,4 +1,4 @@
-import { addToCart } from "./carts.js"
+import { addToCart, decreaseItem, increaseItem, removeItem } from "./carts.js"
 import { getElement } from "./elements.js"
 import { productDisplay } from "./productDisplay.js"
 import { btnPressed } from "./productsInputs.js"
@@ -45,6 +45,15 @@ export function buttons(){
                 case 'cartItem':
                     addToCart(e)
                     showCart()
+                break;
+                case 'removeItem':
+                   removeItem(e);
+                break;
+                case 'increase':
+                    increaseItem(e);
+                break;
+                case 'decrease':
+                    decreaseItem(e);
                 break;
             }
         }
