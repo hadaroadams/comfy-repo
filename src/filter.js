@@ -19,10 +19,11 @@ export function filterAPi(){
             title:name,
             price:price/100,
             company:company,
+            productsInCart:1,
         }
         list.push(productItme)
 
      })
-     
+    console.log(list)
     return list
 }

@@ -12,7 +12,7 @@ export async function fetctApi(){
         respon.map((item)=>{
             productArray.push(item)
         })
-        console.log(productArray)
+        console.log(respon)
         return respon
     }catch(error){
         console.log(error)

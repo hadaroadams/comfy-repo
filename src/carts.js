@@ -1,28 +1,55 @@
 import { buttons } from "./buttons.js"
 import { getElement } from "./elements.js"
+import { fetctApi } from "./fetchAPI.js"
 import { filterAPi } from "./filter.js"
+
 
 let cartContainer = getElement('.itemContainer')
 let price = getElement('.cartPrice')
 let num = 0
-let numOfProduct=0
 let allitems=[]
 let numOfItem= getElement('.cartNum')
+
+await fetctApi()
+
+let cartProduct = filterAPi()
+
 export function addToCart(item){
-    console.log(numOfItem)
-    let element1 = item.target.parentNode.parentElement.parentElement.parentElement
-    let element2 = item.target.parentNode.parentElement.parentElement
+    let element = item.currentTarget.parentElement.parentElement.parentElement
     // WHY DOES THE PARENTELEMENT I AM TRYING TO TARGET KEEP CHANGING BETWEEN element1 and element2
-    console.log(element1)
-    let cartProduct = filterAPi()
-    console.log(cartProduct)
-    cartProduct.filter((item)=>{
-        if(item.id==element1.id||item.id==element2.id ){
-            allitems.push(item)
-            console.log(allitems.length)
-            numOfItem.innerHTML= allitems.length
-            console.log(allitems)
-            let article = document.createElement('article')
+    //answer found
+    let boolean1 =allitems.some((item)=>{
+        return item.id == element.id  
+    })
+    console.log(boolean1)
+    console.log(element)
+    
+        cartProduct.filter((item)=>{
+            if(item.id==element.id ){
+                
+                if(boolean1){
+                    let article=getElement(`#${item.id}`)
+                    let itemNumber= article.querySelector('.numPro')
+                    item.productsInCart++
+                    itemNumber.innerHTML=item.productsInCart
+                    console.log(item.productsInCart,itemNumber)
+                    num = num+item.price
+                    price.innerHTML=`$${num.toFixed(2)}`
+                }else{
+                    console.log(item)
+                    allitems.push(item)
+                    numOfItem.innerHTML= allitems.length
+                    cartDisplay(item)
+                }
+            }
+        })
+        buttons()
+}
+    
+
+
+function cartDisplay(item){
+     let article = document.createElement('article')
             article.setAttribute("id",`${item.id}`)
             article.innerHTML=`<img src="${item.image}" alt="">
                     <div class="productDetails">
@@ -32,38 +59,64 @@ export function addToCart(item){
                     </div>
                     <div class="productBtns">
                         <button id='increase'><i class="fa-solid fa-angle-up"></i></button>
-                        <h5 class="">1</h5>
+                        <h5 class="numPro">1</h5>
                         <button id='decrease'><i class="fa-solid fa-angle-down"></i></button>
                     </div>`
                 num = num +item.price
-                console.log(price,num)
                 price.innerHTML=`$${num.toFixed(2)}`
             cartContainer.appendChild(article)
-        }
-    })
-    buttons()
 }
 
 export function removeItem(element){
-    let article = element.target.parentElement.parentElement
+    let article = element.currentTarget.parentElement.parentElement
+    console.log(article)
     article.remove()
     let id = article.id
     allitems = allitems.filter((item)=>{
         if(item.id!==id){
             return item
+        }  
+    })
+    cartProduct.filter((item)=>{
+        if(item.id==id){
+            num =num-(item.price*item.productsInCart)
+            item.productsInCart=1
         }
-        num=num-item.price
-        price.innerHTML=`$${num.toFixed(2)}`
     })
     console.log(allitems)
+    price.innerHTML=`$${num.toFixed(2)}`
     numOfItem.innerHTML=allitems.length
 }
 
-export function increaseItem(element){
-    let article = element.target.parentElement.nextElementSibling
-    let item 
-    item++
-    article.innerHTML = item
+export function increOrDecre(element){
+    let article = element.currentTarget.parentElement.parentElement
+    let numOfProducts = article.querySelector('.numPro')
+    if(element.currentTarget.id=="increase"){
+        cartProduct.filter((item)=>{
+            if(item.id==article.id){
+                item.productsInCart++;
+                numOfProducts.innerHTML=item.productsInCart;
+                num=num+item.price
+                price.innerHTML=`$${num.toFixed(2)}`
+                allitems.length++
+                numOfItem.innerHTML=allitems.length
+            }
+        })
+    }else{
+        cartProduct.filter((item)=>{
+            if(item.id==article.id){
+                item.productsInCart--;
+                numOfProducts.innerHTML=item.productsInCart;
+                num=num-item.price
+                price.innerHTML=`$${num.toFixed(2)}`
+                allitems.length++
+                numOfItem.innerHTML=allitems.length
+            }
+        })
+    }
+    // let item 
+    // item++
+    // article.innerHTML = item
 }
 export function decreaseItem(element){
     let article = element.target.parentElement.previousElementSibling

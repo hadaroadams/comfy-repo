@@ -2,7 +2,7 @@ import { buttons } from "./buttons.js";
 import { getElement } from "./elements.js";
 import { productArray } from "./fetchAPI.js";
 import { filterAPi } from "./filter.js";
- console.log('2')
+
 let product = getElement(".products")
 let items = await filterAPi()
 export async function productDisplay(selections){
@@ -12,18 +12,17 @@ export async function productDisplay(selections){
                         </div>
                     `
     if(selections){
-        console.log(selections)
         let data = selections
         product.innerHTML=''
             data.map((item)=>{
                     let article = document.createElement('article')
                     article.setAttribute('id',`${item.id}`)
                     let content = `
-                            <div class="productImg" id ="${item.id}">
+                            <div class="productImg">
                                 <img src=${item.image} alt="">
                                 <div class="productButtons">
                                     <a href=""><button class="search"><i class="fa-solid fa-magnifying-glass"></i></button></a>
-                                    <button id="cartItem"><i class="fa-solid fa-cart-shopping"></i></button>
+                                    <button id ="cartItem"><i class="fa-solid fa-cart-shopping" id ="cartItem" ></i></button>
                                 </div>
                             </div>
                             <p>${item.title}</p>
@@ -38,11 +37,11 @@ export async function productDisplay(selections){
                     let article = document.createElement('article')
                     article.setAttribute('id',`${item.id}`)
                     let content = `
-                            <div class="productImg" id ="${item.id}">
+                            <div class="productImg">
                                 <img src=${item.image} alt="">
                                 <div class="productButtons">
                                     <a href=""><button class="search"><i class="fa-solid fa-magnifying-glass"></i></button></a>
-                                    <button id="cartItem"><i class="fa-solid fa-cart-shopping"></i></button>
+                                    <button id="cartItem"><i class="fa-solid fa-cart-shopping" id="cartItem"></i></button>
                                 </div>
                             </div>
                             <p>${item.title}</p>
@@ -52,6 +51,5 @@ export async function productDisplay(selections){
                     product.appendChild(article)
             })
     }
-    console.log(document.querySelectorAll('button'))
     buttons()
 }

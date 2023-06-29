@@ -27,7 +27,6 @@ export  function btnPressed(company, num,title){
         list.push(productItem)
         }
     })
-    console.log(company,list)
     productDisplay(list)
 }
 

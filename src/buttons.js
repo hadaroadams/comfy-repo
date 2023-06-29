@@ -1,16 +1,14 @@
-import { addToCart, decreaseItem, increaseItem, removeItem } from "./carts.js"
+import { addToCart, increOrDecre, removeItem } from "./carts.js"
 import { getElement } from "./elements.js"
 import { productDisplay } from "./productDisplay.js"
 import { btnPressed } from "./productsInputs.js"
 
-console.log("heloo")
 
 export function buttons(){
     let btn = document.querySelectorAll('button')
     let menu = getElement('.navBackground')
 
     btn.forEach(async(item)=>{
-        console.log(item.id)
         item.onclick=(e)=>{
             e.preventDefault()
             switch(item.id || item.className){
@@ -27,7 +25,6 @@ export function buttons(){
                     showCart()
                 break;
                 case 'all':
-                    console.log('all');
                     productDisplay()
                 break;
                 case 'ikea':
@@ -50,10 +47,10 @@ export function buttons(){
                    removeItem(e);
                 break;
                 case 'increase':
-                    increaseItem(e);
+                    increOrDecre(e);
                 break;
                 case 'decrease':
-                    decreaseItem(e);
+                    increOrDecre(e);
                 break;
             }
         }
@@ -64,7 +61,7 @@ function showCart(){
     slider.classList.remove('cartSliderOut')
     slider.classList.add('cartSliderIn');
     slider.classList.remove('clear');
-    console.log(slider)
+    
 }
 function closeCart(){
     slider.classList.add('cartSliderOut');
@@ -72,5 +69,4 @@ function closeCart(){
     setTimeout(()=>{
         slider.classList.add('clear');
     },500)                   
-    console.log(slider)
 }

@@ -14,7 +14,6 @@ let productArea = getElement('.productContainer')
                `
         await fetctApi()
         let data = filterAPi()
-        console.log(data)
         productArea.innerHTML=""
         data.map((item , num)=>{
             if(num<=2){
