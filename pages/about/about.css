@@ -173,7 +173,7 @@ body header img {
   flex: 0.1;
 }
 body header .menu {
-  margin-left: 20px;
+  margin-left: 40px;
   font-size: 1.6em;
   width: 70px;
   height: 40px;
@@ -188,7 +188,7 @@ body header .menu:hover {
   cursor: pointer;
 }
 body header .cart {
-  margin-right: 20px;
+  margin-right: 40px;
   border: none;
   font-size: 1.7em;
   color: rgb(61, 60, 60);
@@ -292,6 +292,7 @@ body main p {
 @media (min-width: 800px) {
   body .navBar {
     display: block;
+    margin-left: 40px;
   }
   body .navBar ul {
     display: flex;
@@ -303,6 +304,10 @@ body main p {
   }
   body .navBar ul li a {
     color: black;
+    transition: 0.4s;
+  }
+  body .navBar ul li a:hover {
+    color: rgb(206, 99, 6);
   }
   body .menu {
     display: none;

@@ -1,3 +1,4 @@
+import { loadshow } from "./carts.js";
 import { fetctApi, productArray } from "./fetchAPI.js";
 import { homeDisplay } from "./homeDisplay.js";
 console.log("1")
@@ -17,7 +18,7 @@ export function filterAPi(){
             id:id,
             image:image[0].url,
             title:name,
-            price:price/100,
+            price:price/10,
             company:company,
             productsInCart:1,
         }

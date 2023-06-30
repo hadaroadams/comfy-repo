@@ -26,7 +26,7 @@ export async function productDisplay(selections){
                                 </div>
                             </div>
                             <p>${item.title}</p>
-                            <h3>$${item.price}</h3>
+                            <h3>GHC ${item.price}</h3>
                     `
                     article.innerHTML = content
                     product.appendChild(article)
@@ -45,7 +45,7 @@ export async function productDisplay(selections){
                                 </div>
                             </div>
                             <p>${item.title}</p>
-                            <h3>$${item.price}</h3>
+                            <h3>GHC ${item.price}</h3>
                     `
                     article.innerHTML=content
                     product.appendChild(article)

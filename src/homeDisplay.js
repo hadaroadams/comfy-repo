@@ -7,14 +7,8 @@ import { filterAPi } from "./filter.js";
 export  async function homeDisplay(){
 let productArea = getElement('.productContainer')
         console.log(productArea)
-        productArea.innerText=`
-                <div class="loader">
-                    <img src="./assert/Loading_icon.gif" alt="">
-                </div>
-               `
         await fetctApi()
         let data = filterAPi()
-        productArea.innerHTML=""
         data.map((item , num)=>{
             if(num<=2){
                 console.log(num)
@@ -28,8 +22,8 @@ let productArea = getElement('.productContainer')
                                 <button id ='cartItem'><i class="fa-solid fa-cart-shopping"></i></button>
                             </div>
                         </div>
-                        <p>${item.title}</p>
-                        <h3>${item.price}</h3>
+                        <p>Ghc${item.title}</p>
+                        <h3>GHC ${item.price}</h3>
                 `
                 article.innerHTML=content
                 productArea.appendChild(article)

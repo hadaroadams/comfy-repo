@@ -3,11 +3,14 @@ import { productDisplay } from "../../src/productDisplay.js";
 import { getElement } from "../../src/elements.js";
 import { fetctApi } from "../../src/fetchAPI.js";
 import { btnPressed } from "../../src/productsInputs.js";
+import { loadshow } from "../../src/carts.js";
 
 let priceRange = getElement('#range')
 let price = getElement('.priceNum')
 let textArea = getElement('#text')
-window.addEventListener('load',fetctApi)
+window.addEventListener('load',()=>{
+    fetctApi()
+})
 
 
 productDisplay()

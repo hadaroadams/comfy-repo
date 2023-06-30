@@ -416,6 +416,10 @@ body .feature .allProduct .btn:hover {
   }
   body .homeSection .navBar ul li a {
     color: white;
+    transition: 0.4s;
+  }
+  body .homeSection .navBar ul li a:hover {
+    color: rgb(206, 99, 6);
   }
   body .homeSection .menu {
     display: none;

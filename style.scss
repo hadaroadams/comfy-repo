@@ -441,6 +441,10 @@ body{
 
                         a{
                             color: white;
+                            transition: 0.4s;
+                            &:hover{
+                                color:rgb(206, 99, 6) ;
+                            }
                         }
                     }                   
                 }
