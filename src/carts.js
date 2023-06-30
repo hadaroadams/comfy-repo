@@ -7,6 +7,7 @@ import { filterAPi } from "./filter.js"
 let cartContainer = getElement('.itemContainer')
 let price = getElement('.cartPrice')
 let num = 0
+let num2 = 0
 let allitems=[]
 let numOfItem= getElement('.cartNum')
 
@@ -34,11 +35,15 @@ export function addToCart(item){
                     itemNumber.innerHTML=item.productsInCart
                     console.log(item.productsInCart,itemNumber)
                     num = num+item.price
+                    allitems.length++
+                    num2++
+                    numOfItem.innerHTML=num2
                     price.innerHTML=`$${num.toFixed(2)}`
                 }else{
                     console.log(item)
                     allitems.push(item)
-                    numOfItem.innerHTML= allitems.length
+                    num2++
+                    numOfItem.innerHTML=num2
                     cartDisplay(item)
                 }
             }
@@ -68,8 +73,8 @@ function cartDisplay(item){
 }
 
 export function removeItem(element){
-    let article = element.currentTarget.parentElement.parentElement
-    console.log(article)
+    let article = element
+    console.log(element)
     article.remove()
     let id = article.id
     allitems = allitems.filter((item)=>{
@@ -79,17 +84,20 @@ export function removeItem(element){
     })
     cartProduct.filter((item)=>{
         if(item.id==id){
-            num =num-(item.price*item.productsInCart)
+            num = num-(item.price*item.productsInCart)
+            console.log(allitems)
+            price.innerHTML=`$${Math.abs(num.toFixed(2))}`
+            num2 = num2-item.productsInCart
+            numOfItem.innerHTML=num2
             item.productsInCart=1
         }
     })
-    console.log(allitems)
-    price.innerHTML=`$${num.toFixed(2)}`
-    numOfItem.innerHTML=allitems.length
+    console.log(cartProduct)
 }
 
 export function increOrDecre(element){
     let article = element.currentTarget.parentElement.parentElement
+    //let removal = article.querySelector('#removeItem')
     let numOfProducts = article.querySelector('.numPro')
     if(element.currentTarget.id=="increase"){
         cartProduct.filter((item)=>{
@@ -98,19 +106,24 @@ export function increOrDecre(element){
                 numOfProducts.innerHTML=item.productsInCart;
                 num=num+item.price
                 price.innerHTML=`$${num.toFixed(2)}`
-                allitems.length++
-                numOfItem.innerHTML=allitems.length
+                num2++
+                numOfItem.innerHTML=num2
             }
         })
     }else{
         cartProduct.filter((item)=>{
             if(item.id==article.id){
-                item.productsInCart--;
-                numOfProducts.innerHTML=item.productsInCart;
-                num=num-item.price
-                price.innerHTML=`$${num.toFixed(2)}`
-                allitems.length++
-                numOfItem.innerHTML=allitems.length
+                if(item.productsInCart<=1){
+                    //console.log(removal)
+                    removeItem(article)
+                }else{
+                    item.productsInCart--;
+                    numOfProducts.innerHTML=item.productsInCart;
+                    num=num-item.price
+                    price.innerHTML=`$${num.toFixed(2)}`
+                    num2--
+                    numOfItem.innerHTML=num2
+                }
             }
         })
     }

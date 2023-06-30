@@ -44,7 +44,7 @@ export function buttons(){
                     showCart()
                 break;
                 case 'removeItem':
-                   removeItem(e);
+                   removeItem(e.currentTarget.parentElement.parentElement);
                 break;
                 case 'increase':
                     increOrDecre(e);
