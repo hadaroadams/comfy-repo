@@ -22,7 +22,7 @@ let productArea = getElement('.productContainer')
                                 <button id ='cartItem'><i class="fa-solid fa-cart-shopping"></i></button>
                             </div>
                         </div>
-                        <p>Ghc${item.title}</p>
+                        <p>${item.title}</p>
                         <h3>GHC ${item.price}</h3>
                 `
                 article.innerHTML=content

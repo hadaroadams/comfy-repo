@@ -4,7 +4,8 @@ import { getElement } from "./elements.js"
 let url='https://course-api.com/javascript-store-single-product'
 let main = getElement('main')
 let headName= getElement('.name')
-export async function singFetch(id){
+
+async function singFetch(id){
     try{
         let data = await fetch(`${url}/?id=${id}`)
             data = await data.json()
@@ -16,7 +17,7 @@ export async function singFetch(id){
 
 export async function productsDetailsDipslay(id){
         let data = await singFetch(id)
-
+        main.innerHTML=''
         console.log(data)
         const{colors,company,description,image,price,name} = data.fields
         headName.innerHTML=`Home / ${name.replace(/^(.)|\s(.)/g, ($1) => $1.toUpperCase())}`;
@@ -38,7 +39,7 @@ export async function productsDetailsDipslay(id){
                 <button id="singlAddToCart" data-id="${id}">ADD TO CART</button>
             </div>
         `
-        main.appendChild(article)
+        main.append(article)
         console.log(main)
 
         buttons()

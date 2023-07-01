@@ -273,6 +273,16 @@ body .display h2, body .title h2 {
 body main {
   margin: 40px 30px;
 }
+body main .loader {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+}
+body main .loader img {
+  margin: auto auto;
+  width: 400px;
+  height: 400px;
+}
 body main article {
   display: flex;
   flex-direction: column;

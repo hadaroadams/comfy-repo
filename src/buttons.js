@@ -54,6 +54,7 @@ export function buttons(){
                 break;
                 case 'singlAddToCart':
                     addToCart(e.currentTarget.dataset.id);
+                    showCart()
                 break;
             }
         }
@@ -69,6 +70,7 @@ function showCart(){
 function closeCart(){
     slider.classList.add('cartSliderOut');
     slider.classList.remove('cartSliderIn');
+    
     setTimeout(()=>{
         slider.classList.add('clear');
     },500)                   
