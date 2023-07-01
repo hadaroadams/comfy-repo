@@ -18,7 +18,7 @@ let productArea = getElement('.productContainer')
                         <div class="productImg">
                             <img src=${item.image} alt="">
                             <div class="productButtons">
-                                <a href=""><button id='search'><i class="fa-solid fa-magnifying-glass"></i></button></a>
+                                <a href="./pages/productDetails/productsDetails.html?id=${item.id}" ><i class="fa-solid fa-magnifying-glass"></i></a>
                                 <button id ='cartItem'><i class="fa-solid fa-cart-shopping"></i></button>
                             </div>
                         </div>

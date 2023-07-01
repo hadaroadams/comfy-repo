@@ -1,1 +1,379 @@
-/*# sourceMappingURL=productsDetails.css.map */
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body .cartSliderIn, body .cartSliderOut {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: end;
+  animation: show forwards 0.6s;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .cartSliderIn aside, body .cartSliderOut aside {
+  background-color: rgb(238, 244, 248);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: scroll;
+  animation: slide 1s forwards;
+}
+@keyframes slide {
+  from {
+    width: 0px;
+    opacity: 0;
+  }
+  to {
+    width: 400px;
+    opacity: 1;
+  }
+}
+body .cartSliderIn aside > button, body .cartSliderOut aside > button {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2.3em;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+body .cartSliderIn aside h2, body .cartSliderOut aside h2 {
+  text-align: center;
+  font-family: cursive;
+}
+body .cartSliderIn aside .itemContainer, body .cartSliderOut aside .itemContainer {
+  height: 100vh;
+}
+body .cartSliderIn aside .itemContainer article, body .cartSliderOut aside .itemContainer article {
+  height: 80px;
+  margin-top: 20px;
+  display: flex;
+}
+body .cartSliderIn aside .itemContainer article img, body .cartSliderOut aside .itemContainer article img {
+  width: 30%;
+  height: 100%;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+body .cartSliderIn aside .itemContainer article .productDetails, body .cartSliderOut aside .itemContainer article .productDetails {
+  flex: 1;
+  margin-right: 20px;
+}
+body .cartSliderIn aside .itemContainer article .productDetails h5, body .cartSliderOut aside .itemContainer article .productDetails h5 {
+  font-size: 1.1em;
+}
+body .cartSliderIn aside .itemContainer article .productDetails p, body .cartSliderOut aside .itemContainer article .productDetails p {
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+body .cartSliderIn aside .itemContainer article .productDetails button, body .cartSliderOut aside .itemContainer article .productDetails button {
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+  margin-top: 10px;
+  cursor: pointer;
+}
+body .cartSliderIn aside .itemContainer article .productBtns h5, body .cartSliderOut aside .itemContainer article .productBtns h5 {
+  text-align: center;
+  margin: 10px 0px;
+}
+body .cartSliderIn aside .itemContainer article .productBtns button, body .cartSliderOut aside .itemContainer article .productBtns button {
+  color: rgb(206, 99, 6);
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body .cartSliderIn aside .itemContainer article .productBtns button:hover, body .cartSliderOut aside .itemContainer article .productBtns button:hover {
+  color: rgb(125, 61, 6);
+}
+body .cartSliderIn aside .total, body .cartSliderOut aside .total {
+  margin: 0 auto;
+}
+body .cartSliderIn aside .total p, body .cartSliderOut aside .total p {
+  font-family: cursive;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+body .cartSliderIn aside .total button, body .cartSliderOut aside .total button {
+  width: 230px;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  background-color: rgb(206, 99, 6);
+  border: none;
+  padding: 5px 0px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  transition: 0.5s;
+}
+body .cartSliderIn aside .total button:hover, body .cartSliderOut aside .total button:hover {
+  background-color: rgb(125, 61, 6);
+}
+body .cartSliderOut {
+  animation: show1 forwards 0.6s;
+}
+@keyframes show1 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+body .cartSliderOut aside {
+  animation: slide1 1s forwards;
+}
+@keyframes slide1 {
+  from {
+    width: 400px;
+    opacity: 1;
+  }
+  to {
+    width: 0px;
+    opacity: 0;
+  }
+}
+body .clear {
+  display: none;
+}
+body header {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+body header nav {
+  display: none;
+}
+body header img {
+  flex: 0.1;
+}
+body header .menu {
+  margin-left: 40px;
+  font-size: 1.6em;
+  width: 70px;
+  height: 40px;
+  border-radius: 30px;
+  color: white;
+  background-color: rgb(206, 99, 6);
+  border: none;
+  transition: 0.4s;
+}
+body header .menu:hover {
+  background-color: rgb(125, 61, 6);
+  cursor: pointer;
+}
+body header .cart {
+  margin-right: 40px;
+  border: none;
+  font-size: 1.7em;
+  color: rgb(61, 60, 60);
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+body header .cart .cartNum {
+  content: "1";
+  background-color: rgb(206, 99, 6);
+  font-size: 0.8em;
+  font-weight: bold;
+  border-radius: 45%;
+  padding: 3px 9px;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  color: white;
+}
+body .navBackground {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  animation: show forwards 0.6s;
+  display: block;
+  visibility: visible;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .navBackground .showUp {
+  background-color: rgb(249, 250, 250);
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  visibility: visible;
+  border-radius: 10px;
+  height: 90vh;
+}
+body .navBackground .showUp button {
+  width: 20px;
+  align-self: flex-end;
+  margin: 10px 20px;
+  border: none;
+  background-color: transparent;
+  font-size: 2.3em;
+  color: rgb(74, 74, 75);
+}
+body .navBackground .showUp ul {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 40px;
+}
+body .navBackground .showUp ul li {
+  margin: 20px;
+  font-size: 1.5em;
+}
+body .navBackground .showUp ul li a {
+  color: rgb(104, 105, 105);
+}
+body .navBackground .showUp ul li a i {
+  margin-right: 20px;
+}
+body .clear {
+  display: none;
+}
+body .display, body .title {
+  background-color: aliceblue;
+  padding: 40px;
+}
+body .display h2, body .title h2 {
+  color: rgb(105, 119, 132);
+}
+body main {
+  margin: 40px 30px;
+}
+body main article {
+  display: flex;
+  flex-direction: column;
+}
+body main article .imageDiv {
+  margin-bottom: 20px;
+}
+body main article .imageDiv img {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+}
+body main article .detailsDiv h1 {
+  margin: 20px 0px;
+  font-size: 3em;
+  font-weight: 100;
+}
+body main article .detailsDiv h2 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 2em;
+  color: rgb(115, 118, 121);
+  margin: 10px 0px;
+}
+body main article .detailsDiv .priceP {
+  color: rgb(33, 43, 52);
+  font-size: 1.4em;
+  font-weight: 700;
+  margin: 30px 0px;
+}
+body main article .detailsDiv .content {
+  letter-spacing: 2px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: rgb(62, 77, 90);
+}
+body main article .detailsDiv .productColor {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  margin-bottom: 20px;
+}
+body main article .detailsDiv .productColor div {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+body main article .detailsDiv button {
+  font-size: 1.1em;
+  letter-spacing: 4px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(206, 99, 6);
+  border: none;
+  color: white;
+  transition: 0.4s;
+}
+body main article .detailsDiv button:hover {
+  background-color: rgb(132, 63, 3);
+  cursor: pointer;
+}
+@media (min-width: 800px) {
+  body .navBar {
+    display: block;
+    margin-left: 40px;
+  }
+  body .navBar ul {
+    display: flex;
+    list-style: none;
+  }
+  body .navBar ul li {
+    margin: 20px;
+    font-size: 1.5em;
+  }
+  body .navBar ul li a {
+    color: black;
+    transition: 0.4s;
+  }
+  body .navBar ul li a:hover {
+    color: rgb(206, 99, 6);
+  }
+  body .menu {
+    display: none;
+  }
+  body .navBackground {
+    visibility: hidden;
+  }
+  body .navBackground .showUp {
+    visibility: hidden;
+  }
+  body main article {
+    flex-direction: row;
+  }
+  body main article .imageDiv {
+    flex: 50%;
+    margin-right: 30px;
+  }
+  body main article .detailsDiv {
+    width: 50%;
+  }
+}/*# sourceMappingURL=productsDetails.css.map */

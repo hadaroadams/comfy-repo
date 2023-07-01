@@ -16,17 +16,16 @@ await fetctApi()
 let cartProduct = filterAPi()
 
 export function addToCart(item){
-    let element = item.currentTarget.parentElement.parentElement.parentElement
+    let elementId = item
     // WHY DOES THE PARENTELEMENT I AM TRYING TO TARGET KEEP CHANGING BETWEEN element1 and element2
     //answer found
     let boolean1 =Object.keys(localStorage).some((item)=>{
-        return item == element.id  
+        return item == elementId  
     })
     console.log(boolean1)
-    console.log(element)
     
         cartProduct.filter((item)=>{
-            if(item.id==element.id ){
+            if(item.id==elementId ){
                 
                 if(boolean1){
                     let article=getElement(`#${item.id}`)
@@ -153,6 +152,7 @@ export function loadshow(){
     let convertedData = Object.values(localStorage)
     console.log(localStorage)
     convertedData.map((item)=>{
+        console.log(item)
         let freshData = JSON.parse(item)
         num2 = num2+freshData.productsInCart
         num = num+(freshData.price*freshData.productsInCart)

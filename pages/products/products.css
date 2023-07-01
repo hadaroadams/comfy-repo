@@ -220,6 +220,7 @@ body .navBackground {
   height: 100vh;
   z-index: 1;
   animation: show forwards 0.6s;
+  visibility: visible;
 }
 @keyframes show {
   from {
@@ -351,7 +352,7 @@ body .display .products article .productImg div {
   visibility: visible;
   transition: 0.3s;
 }
-body .display .products article .productImg div button {
+body .display .products article .productImg div button, body .display .products article .productImg div a {
   font-size: 1.4em;
   width: -moz-fit-content;
   width: fit-content;
@@ -367,7 +368,7 @@ body .display .products article .productImg div button {
 body .display .products article .productImg:hover div {
   visibility: visible;
 }
-body .display .products article .productImg:hover div button {
+body .display .products article .productImg:hover div button, body .display .products article .productImg:hover div a {
   background-color: rgb(206, 99, 6);
   color: white;
 }
@@ -402,6 +403,9 @@ body .display .products article h3 {
     display: none;
   }
   body .navBackground {
+    visibility: hidden;
+  }
+  body .navBackground .showUp {
     visibility: hidden;
   }
   body .display {

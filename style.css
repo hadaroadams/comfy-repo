@@ -254,6 +254,7 @@ body .homeSection .navBackground {
   height: 100vh;
   z-index: 1;
   animation: show forwards 0.6s;
+  visibility: visible;
 }
 @keyframes show {
   from {
@@ -356,9 +357,10 @@ body .feature .productContainer article .productImg div {
   visibility: visible;
   transition: 0.3s;
 }
-body .feature .productContainer article .productImg div button {
+body .feature .productContainer article .productImg div a, body .feature .productContainer article .productImg div button {
   font-size: 1.4em;
-  width: 50px;
+  width: -moz-fit-content;
+  width: fit-content;
   border: none;
   background-color: transparent;
   border-radius: 50%;
@@ -371,7 +373,7 @@ body .feature .productContainer article .productImg div button {
 body .feature .productContainer article .productImg:hover div {
   visibility: visible;
 }
-body .feature .productContainer article .productImg:hover div button {
+body .feature .productContainer article .productImg:hover div a, body .feature .productContainer article .productImg:hover div button {
   background-color: rgb(206, 99, 6);
   color: white;
 }
@@ -425,6 +427,9 @@ body .feature .allProduct .btn:hover {
     display: none;
   }
   body .homeSection .navBackground {
+    visibility: hidden;
+  }
+  body .homeSection .navBackground .showUp {
     visibility: hidden;
   }
   body .homeSection .homeInfo {

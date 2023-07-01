@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./productsDetails.css">
     <title>Products</title>
 </head>
 <body>
-    
+    <section class="clear cartSliderIn" id="cartSlider" >
+        <aside>
+            <button id="closeCart"><i class="fa-solid fa-xmark"></i></button>
+            <h2>Your Bag</h2>
+            <div class="itemContainer">
+            </div>
+            <div class="total">
+                <p>Total:<span class="cartPrice">GHC0.00</span></p>
+                <button>CHECKOUT</button>
+            </div>
+        </aside>
+    </section>
+    <header>
+        <button class="menu" id='menu'>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="navBar">
+            <ul>
+                <li><a href="./../../index.html">Home</a></li>
+                <li><a href="./../products/products.html">Product</a></li>
+                <li><a href="./../about/about.html">About</a></li>
+            </ul>
+        </nav>
+        <div>
+            <img src="../../assert/logo-black.svg" alt="">
+        </div>
+        <button class="cart">
+            <span class="cartNum">0</span>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+    </header>
+    <div class="navBackground clear">
+        <nav class="showUp ">
+            <button id="close"><i class="fa-solid fa-xmark"></i></button>
+            <ul>
+                <li><a href="./../../index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
+                <li><a href="./../products/products.html"><i class="fa-solid fa-couch"></i>Product</a></li>
+                <li><a href="./../about/about.html"><i class="fa-solid fa-book"></i>About</a></li>
+            </ul>
+        </nav>  
+    </div>
+    <section class="title">
+        <h2 class="name"> </h2>
+    </section>
+    <main>
+    </main>
+
+    <script src="https://kit.fontawesome.com/91c2d2ff16.js" crossorigin="anonymous"></script>
+    <script src="./productsDetails.js" type="module"></script>
 </body>
 </html>

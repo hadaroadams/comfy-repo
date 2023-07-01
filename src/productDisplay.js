@@ -21,7 +21,7 @@ export async function productDisplay(selections){
                             <div class="productImg">
                                 <img src=${item.image} alt="">
                                 <div class="productButtons">
-                                    <a href=""><button class="search"><i class="fa-solid fa-magnifying-glass"></i></button></a>
+                                    <a href="./../productDetails/productsDetails.html?id=${item.id}"><i class="fa-solid fa-magnifying-glass"></i></a>
                                     <button id ="cartItem"><i class="fa-solid fa-cart-shopping" id ="cartItem" ></i></button>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@ export async function productDisplay(selections){
                             <div class="productImg">
                                 <img src=${item.image} alt="">
                                 <div class="productButtons">
-                                    <a href=""><button class="search"><i class="fa-solid fa-magnifying-glass"></i></button></a>
+                                    <a href="./../productDetails/productsDetails.html?id=${item.id}"><i class="fa-solid fa-magnifying-glass"></i></a>
                                     <button id="cartItem"><i class="fa-solid fa-cart-shopping" id="cartItem"></i></button>
                                 </div>
                             </div>

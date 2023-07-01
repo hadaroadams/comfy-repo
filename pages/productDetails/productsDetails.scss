@@ -1,0 +1,402 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    .cartSliderIn , .cartSliderOut{
+    position:fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: end;
+    animation: show forwards 0.6s;
+    @keyframes show {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+    
+    aside{
+        background-color: rgb(238, 244, 248);
+        display: flex;
+        flex-direction: column;
+        padding: 20px; 
+        overflow: scroll;
+        animation: slide 1s forwards;
+
+        @keyframes slide {
+            from{
+                width: 0px;
+                opacity: 0;
+            }
+            to{
+                width: 400px;
+                opacity: 1;
+            }
+        }
+
+        & > button{
+            height: fit-content;
+            width: fit-content;
+            font-size: 2.3em;
+            background-color:transparent;
+            border:none;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        h2{
+            text-align: center;
+            font-family:cursive;
+        }
+        .itemContainer{
+            height:100vh;
+            article{
+                height: 80px;
+                margin-top: 20px;
+                display: flex;
+                    img{
+                        width: 30%; 
+                        height: 100%;
+                        border-radius: 5px;
+                        margin-right: 20px;
+                    }
+                .productDetails{
+                    flex:1;
+                    margin-right: 20px;
+
+                    h5{
+                        font-size: 1.1em;
+                    }
+                    p{
+                        margin-top: 5px;
+                        font-size: 0.9em;
+                    }
+                    button{
+                        border: none;
+                        background-color: transparent;
+                        font-size: 1em;
+                        margin-top: 10px;
+                        cursor: pointer;
+                    }
+                }
+                .productBtns{
+                    h5{
+                        text-align: center;
+                        margin: 10px 0px;
+                    }
+                    button{
+                        color:rgb(206, 99, 6);
+                        background-color:transparent;
+                        border: none;
+                        font-size: 1em;
+                        cursor: pointer;
+                        transition: 0.5s;
+
+                        &:hover{
+                            color:rgb(125, 61, 6);
+                            
+                        }
+                    }
+                }
+            }
+        }
+        .total{
+            margin: 0 auto;
+            p{
+                font-family: cursive;
+                font-size: 1.6em;
+                margin-bottom: 10px;
+                text-align: center;
+                margin-top: 20px;
+            }
+            button{
+                width:230px;
+                font-size: 1.2em;
+                letter-spacing: 2px;
+                background-color:rgb(206, 99, 6);
+                border: none;
+                padding:5px 0px;
+                cursor: pointer;
+                border-radius: 5px;
+                color: white;
+                transition: 0.5s;
+
+                &:hover{
+                    background-color:rgb(125, 61, 6);
+                    
+                }
+
+            }
+        }
+    }
+}
+    .cartSliderOut{
+        animation: show1 forwards 0.6s;
+
+        @keyframes show1 {
+                from{
+                    opacity: 1;
+                }
+                to{
+                    opacity: 0;
+                    display: none;
+                }
+            }
+        aside{
+            animation: slide1 1s forwards;
+            @keyframes slide1 {
+                from{
+                    width: 400px;
+                    opacity: 1;
+                }
+                to{
+                    width: 0px;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    .clear{
+        display: none;
+    }
+        header{
+            display: flex;
+            width: 100%;
+            height:100px;
+            align-items: center;
+            justify-content:space-between; 
+            nav{
+                display: none;
+            }
+           img{
+            flex:0.1;
+           }
+            .menu{
+                margin-left: 40px;
+                font-size: 1.6em;
+                width: 70px;
+                height: 40px;
+                border-radius: 30px;
+                color: white;
+                background-color: rgb(206, 99, 6);
+                border: none;
+                transition:0.4s;
+
+                &:hover{
+                    background-color: rgb(125, 61, 6);
+                    cursor: pointer;
+                }
+            }
+            .cart{
+                margin-right: 40px;
+                border: none;
+                font-size: 1.7em;
+                color:rgb(61, 60, 60);
+                background-color: transparent;
+                cursor: pointer;
+                position: relative;
+                & .cartNum{
+                    content:'1';
+                    background-color:rgb(206, 99, 6);
+                    font-size: 0.8em;
+                    font-weight: bold;
+                    border-radius: 45%;
+                    padding: 3px 9px;
+                    position: absolute;
+                    bottom: 20px;
+                    left: 10px;
+                    color: white;
+                }
+            }
+            
+        }
+       .navBackground{
+            background-color: rgba(0, 0, 0, 0.5);
+            position:fixed;
+            top:0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            animation: show forwards 0.6s;
+            display: block;
+            visibility: visible;
+
+            @keyframes show {
+                from{
+                    opacity: 0;
+                }
+                to{
+                    opacity: 1;
+                }
+            }
+            .showUp{
+                background-color: rgb(249, 250, 250);
+                display: flex;
+                flex-direction: column;
+                margin:20px;
+                visibility:visible;
+                border-radius: 10px;
+                height: 90vh;
+
+                button{
+                    width: 20px;
+                    align-self:flex-end;
+                    margin:10px 20px;
+                    border: none;
+                    background-color: transparent;
+                    font-size:2.3em;
+                    color:rgb(74, 74, 75);
+                }
+                ul{
+                    list-style: none;
+                    margin-top: 10px;
+                    padding-left: 40px;
+                    
+                    li{
+                        margin: 20px;
+                        font-size: 1.5em;
+                        a{
+                            color: rgb(104, 105, 105);
+                            i{
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .clear{
+            display: none;
+        }
+
+        .display , .title{
+            background-color: aliceblue;
+            padding: 40px;
+            h2{
+                color: rgb(105, 119, 132);
+            }
+        }
+        main{
+            margin:40px 30px;
+            article{
+                display: flex;
+                flex-direction: column;
+                .imageDiv{
+                    margin-bottom: 20px;
+                    img{
+                        width: 100%;
+                        height: 500px;
+                        border-radius: 10px;
+                    }
+                }
+                .detailsDiv{
+                    h1{
+                        margin: 20px 0px;
+                        font-size: 3em;
+                        font-weight: 100;
+                    }
+                    h2{
+                        font-family:'Kaushan Script', cursive;
+                        font-size: 2em;
+                        color: rgb(115, 118, 121);
+                        margin: 10px 0px;
+                    }
+                    .priceP{
+                        color: rgb(33, 43, 52);
+                        font-size: 1.4em;
+                        font-weight: 700;
+                        margin: 30px 0px;
+                    }
+                    .content{
+                        letter-spacing: 2px;
+                        line-height: 30px;
+                        margin-bottom: 10px;
+                        font-size: 1.2em;
+                        color: rgb(62, 77, 90);
+
+                    }
+                    .productColor{
+                        width: fit-content;
+                        height: fit-content;
+                        display: flex;
+                        margin-bottom: 20px;
+                        div{
+                            width: 30px;
+                            height: 30px;
+                            margin-right: 20px;
+                            border-radius: 50%;
+                        }
+                    }
+                    button{
+                        font-size: 1.1em;
+                        letter-spacing: 4px;
+                        border-radius: 10px;
+                        padding: 10px;
+                        background-color:rgb(206, 99, 6) ;
+                        border: none;
+                        color:white;
+                        transition: 0.4s;
+
+                        &:hover{
+                            background-color:rgb(132, 63, 3);
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+    @media (min-width:800px) {
+            .navBar{
+                display: block;
+                margin-left: 40px;
+                ul{
+                    display: flex;
+                    list-style: none;
+                    li{
+                        margin: 20px;
+                        font-size: 1.5em;
+
+                        a{
+                            color:black;
+                            transition: 0.4s;
+                            &:hover{
+                                color:rgb(206, 99, 6) ;
+                            }
+                        }
+                    }                   
+                }
+            }
+            .menu{
+                display: none;
+            }
+            .navBackground{
+                visibility: hidden;
+                .showUp{
+                    visibility: hidden;
+                }
+            }
+       main{
+        article{
+            flex-direction: row;
+            .imageDiv{
+                flex: 50%;
+                margin-right: 30px;
+            }
+            .detailsDiv{
+                width: 50%;
+            }
+        }
+       }
+    }
+}

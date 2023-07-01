@@ -40,7 +40,7 @@ export function buttons(){
                     btnPressed("liddy")
                 break;
                 case 'cartItem':
-                    addToCart(e)
+                    addToCart(e.currentTarget.parentElement.parentElement.parentElement.id)
                     showCart()
                 break;
                 case 'removeItem':
@@ -51,6 +51,9 @@ export function buttons(){
                 break;
                 case 'decrease':
                     increOrDecre(e);
+                break;
+                case 'singlAddToCart':
+                    addToCart(e.currentTarget.dataset.id);
                 break;
             }
         }

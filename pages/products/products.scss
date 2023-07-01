@@ -230,6 +230,7 @@ body{
             height: 100vh;
             z-index: 1;
             animation: show forwards 0.6s;
+            visibility: visible;
 
             @keyframes show {
                 from{
@@ -370,7 +371,7 @@ body{
                             justify-content: center;
                             visibility:visible;
                             transition: 0.3s;
-                            button{
+                            button, a{
                                 font-size: 1.4em;
                                 width:fit-content;
                                 border: none;
@@ -386,7 +387,7 @@ body{
                         &:hover{
                             div{
                                 visibility:visible;
-                                button{
+                                button, a{
                                     background-color: rgb(206, 99, 6);
                                     color: white;
                                 }
@@ -430,6 +431,9 @@ body{
             }
             .navBackground{
                 visibility: hidden;
+                .showUp{
+                    visibility: hidden;
+                }
             }
         .display{
             flex-direction: row;

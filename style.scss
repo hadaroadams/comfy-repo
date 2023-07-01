@@ -266,6 +266,7 @@ body{
             height: 100vh;
             z-index: 1;
             animation: show forwards 0.6s;
+            visibility: visible;
 
             @keyframes show {
                 from{
@@ -373,9 +374,9 @@ body{
                         justify-content: center;
                         visibility:visible;
                         transition: 0.3s;
-                        button{
+                        a , button {
                             font-size: 1.4em;
-                            width:50px;
+                            width:fit-content;
                             border: none;
                             background-color:transparent;
                             border-radius: 50%;
@@ -389,7 +390,7 @@ body{
                     &:hover{
                         div{
                             visibility:visible;
-                            button{
+                            a , button{
                                 background-color: rgb(206, 99, 6);
                                 color: white;
                             }
@@ -454,6 +455,9 @@ body{
             }
             .navBackground{
                 visibility: hidden;
+                .showUp{
+                    visibility: hidden;
+                }
             }
             .homeInfo{
                 margin-left: 50px;
